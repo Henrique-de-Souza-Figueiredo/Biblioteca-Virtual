@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Livro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+    <div class="container">
+        <h1> Adicionar Livro</h1>
+        <form method="POST">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="text" name="autor" placeholder="Autor" required>
+            <input type="date" name="ano" placeholder="Ano" required>
+            <button class="botao cheio" type="submit">Salvar</button>
+            <a class="botao cancelar cheio" href="/">Cancelar</a>
+
+        </form>
+    </div>
+</body>
+</html>

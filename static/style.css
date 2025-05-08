@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+
+/* Definindo as variáveis de cores */
+:root {
+    --vermelho-asteca: #8b1e1e;
+    --ocre: #d4a373;
+    --jade: #1e4d40;
+    --fundo-claro: #f4efe6;
+    --azul-profundo: #233d4d;
+    --padrão-asteca: url('caminho/para/o/padrão-asteca.png'); /* Se quiser usar um fundo asteca */
+}
+
+/* Resetando estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do body */
+body {
+    font-family: 'IM Fell English', serif;
+    background-color: var(--fundo-claro);
+    color: var(--azul-profundo);
+    line-height: 1.6;
+    background-image: var(--padrão-asteca);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 6px solid var(--jade);
+    border-image: repeating-linear-gradient(
+        45deg,
+        var(--jade),
+        var(--jade) 10px,
+        var(--ocre) 10px,
+        var(--ocre) 20px
+    ) 10;
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--vermelho-asteca);
+    margin-bottom: 1.5rem;
+}
+
+/* Botões principais */
+.botao {
+    display: inline-block;
+    background-color: var(--jade);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    margin: 0.3rem;
+    white-space: nowrap;
+}
+
+.botao:hover {
+    background-color: #123429;
+}
+
+.botao.vermelho {
+    background-color: var(--vermelho-asteca);
+}
+
+.botao.vermelho:hover {
+    background-color: #511616;
+}
+
+.botao.pequeno {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.botao.cheio {
+    width: 100%;
+    text-align: center;
+}
+
+/* Botão de cancelar */
+.botao.cancelar {
+    background-color: transparent;
+    color: var(--vermelho-asteca);
+    border: 2px solid var(--vermelho-asteca);
+}
+
+.botao.cancelar:hover {
+    background-color: var(--vermelho-asteca);
+    color: white;
+}
+
+/* Estilo da Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: white;
+    border: 1px solid var(--jade);
+    table-layout: auto;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--ocre);
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Ajuste de largura das colunas */
+th:nth-child(1),
+td:nth-child(1) {
+    width: 30%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 20%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 30%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 20%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+td .botao {
+    margin: 0 4px;
+    white-space: nowrap;
+}
+
+th {
+    background-color: var(--jade);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+    background-color: #f0ece4;
+}
+
+tr:hover {
+    background-color: #e0d9c6;
+}
+
+/* Estilos de Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 2rem auto 0 auto;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"] {
+    padding: 0.7rem;
+    border: 2px solid var(--ocre);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: var(--azul-profundo);
+    font-family: 'IM Fell English', serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--jade);
+    box-shadow: 0 0 5px var(--jade);
+}
+
+/* Mensagens */
+.mensagens {
+    list-style: none;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #fff3cc;
+    border-left: 6px solid var(--ocre);
+    font-weight: bold;
+}
+
+.mensagens li {
+    margin-bottom: 0.5rem;
+}
+
+/* Elementos de navegação */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 1rem;
+}
+
+nav li {
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--ocre);
+    bottom: -4px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
