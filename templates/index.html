@@ -10,7 +10,7 @@
         <h1>Biblioteca Asteca</h1>
 
         <a class="botao" href="/adicionar_livro">+ Adicionar Livro</a>
-        <a class="botao" href="livros_emprestados">+ Ver Livros Emprestados</a>
+
 
         <table>
             <tr>
@@ -26,10 +26,13 @@
                 <td>
                     <a class="botao pequeno" href="/editar_livro/{{ livro[0] }}">Editar</a>
                     <a class="botao vermelho pequeno" href="/apagar_livro/{{ livro[0] }}">Apagar</a>
+                   {% if livro|length > 4 and livro[4] %}
+                    <a class="botao" href="/devolver_livro/{{ livro[0] }}">Devolver</a>
+                {% else %}
+                    <a class="botao" href="/emprestar_livro/{{ livro[0] }}">Emprestar</a>
+                {% endif %}
+
                 </td>
-                <td
-                    <a class="botao" href="/emprestar_livro/{{ livro[0] }}">+ Emprestar livro</a>
-                </td
             </tr>
             {% endfor %}
         </table>
